@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Listings</h1>
+<h1>Find the office space you need</h1>
+
 
 <table>
   <thead>
@@ -28,9 +29,9 @@
         <td><%= listing.location %></td>
         <td><%= listing.rules %></td>
         <td><%= listing.contacts %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', listing,  class: "btn btn-info"  %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing),  class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', listing,  class: "btn btn-danger" , method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

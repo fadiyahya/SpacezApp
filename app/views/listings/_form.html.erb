@@ -11,39 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_area :name %>
+    <%= f.text_area :name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :officetype %><br>
-    <%= f.text_field :officetype %>
+    <%= f.text_field :officetype, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :aminities %><br>
-    <%= f.text_area :aminities %>
+    <%= f.text_area :aminities, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :location %><br>
-    <%= f.text_area :location %>
+    <%= f.text_area :location, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :rules %><br>
-    <%= f.text_area :rules %>
+    <%= f.text_area :rules, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :contacts %><br>
-    <%= f.text_area :contacts %>
+    <%= f.text_area :contacts, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
