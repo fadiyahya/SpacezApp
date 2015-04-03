@@ -1,46 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @listing.image.url(:medium) %>
+<div class="row">
+    <div class="col-md-6">
+      <div class="thumbnail">
+      <%= image_tag @listing.image.url %>
+    </div>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
+    <div class="col-md-6">
+      <h3><%= @listing.name %></h3>
+      <p><strong>Price:</strong><%= @listing.price %></p>
+      <p><%= @listing.officetype %></p>
+      <p><strong>Aminities:</strong><%= @listing.aminities %></p>
+      <p><%= @listing.city %></p>
+      <p><%= @listing.location %></p>
+      <p><strong>Rules:</strong><%= @listing.rules %></p>
+      <p><strong>Contacts:</strong><%= @listing.contacts %></p>
+    </div>
+          <%= link_to 'Edit', edit_listing_path(@listing) %> |
+          <%= link_to 'Back', listings_path %>
+ 
 
-<p>
-  <strong>Officetype:</strong>
-  <%= @listing.officetype %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
 
-<p>
-  <strong>Aminities:</strong>
-  <%= @listing.aminities %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @listing.city %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @listing.location %>
-</p>
-
-<p>
-  <strong>Rules:</strong>
-  <%= @listing.rules %>
-</p>
-
-<p>
-  <strong>Contacts:</strong>
-  <%= @listing.contacts %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
