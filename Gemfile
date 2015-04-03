@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.4'
 #Twitter_Bootstrap
+gem "paperclip", "~> 4.2"
+
 
 group :development, :test do
   gem 'byebug'
