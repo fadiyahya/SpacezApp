@@ -14,6 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.4'
 #Twitter_Bootstrap
 gem "paperclip", "~> 4.2"
+gem "paperclip-dropbox", ">= 1.1.7"
+gem "figaro"
+
 
 group :production do
 	gem 'rails_12factor'
