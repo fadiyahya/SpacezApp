@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
        validates :name, presence: true
+
+
+     # User / listing relationship (when user deleted, listing is deleted too)
+       has_many :lisitngs, dependent: :destroy
 end
