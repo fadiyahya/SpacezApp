@@ -10,4 +10,11 @@ else
  					validates_attachment_content_type :image, content_type: %w(image/jpeg image/jpg image/png),
  					:path => ":style/:id_:filename"
  	end
-end
+
+ 	 validates :name, :price, :location, :city, presence: true
+ 	 validates :price, numericality: true
+
+		validates :image, :attachment_presence => true
+		validates_with AttachmentPresenceValidator, :attributes => :image
+		validates_with AttachmentSizeValidator, :attributes => :image, :less_than => 2.megabytes
+		end
