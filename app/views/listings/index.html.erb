@@ -1,17 +1,16 @@
   <div class="jumbotron">
-  <h1>Find the office space you need in Jeddah and Riyadh</h1>
-  <p>If you're a freelancer, bla bla blah!</p>
-  
+  <h3>No office, no problem!</h3>
+  <p>Find and book available workspaces around you.</p>
 </div>
 
 <div class="row">
 </br>
   <% @listings.each do |listing| %>
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="thumbnail">
         <%= link_to image_tag(listing.image.url(:medium) ), listing %>
         <div class="caption">
-        <h3><%= listing.name %></h3>
+        <h3><span class="label label-primary"><%= listing.name %></span></h3>
         <p> Add by <strong><%= listing.user.name %></strong>  </p>
         <p> <strong> <%= listing.price %> </strong> SAR per workday</p>
         <p><%= listing.city %></p>
