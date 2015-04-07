@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'pages/contact'
 
   get 'pages/how'
+  get 'spaceowner' => "listings#spaceowner"
 
   resources :listings
 

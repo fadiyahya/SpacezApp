@@ -1,8 +1,11 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:spaceowner, :new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
+def spaceowner
+  @listings = Listing.where(user: current_user)
+end
 
   # GET /listings
   # GET /listings.json

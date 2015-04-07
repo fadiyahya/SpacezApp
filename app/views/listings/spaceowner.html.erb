@@ -1,0 +1,27 @@
+<h1> Your Workspaces </h1>
+<div class="row">
+</br>
+  <% @listings.each do |listing| %>
+    <div class="col-md-3">
+        <div class="thumbnail">
+        <%= link_to image_tag(listing.image.url(:medium)), listing %>
+        <div class="caption">
+        <h2><%= listing.name %></h2>
+        <% if (user_signed_in?) && (current_user == listing.user) %>
+          <%= link_to 'Edit', edit_listing_path(listing),  class: "btn btn-link" %>
+          <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-link"  %>
+          <% end %>
+      </div>
+     </div>
+   </div>
+<% end %>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+      <% if user_signed_in? %>
+           <%= link_to 'Add a Workspace', new_listing_path, class: "btn btn-danger center-block" %>
+      <% end %>
+    </div>
+</div>
+<hr>
