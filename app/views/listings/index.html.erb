@@ -23,5 +23,8 @@
 <hr>
 <div class="row">
 <div class="col-md-4">
-<%= link_to 'Add a Workspace', new_listing_path, class: "btn btn-danger" %> </div>
+      <% if user_signed_in? %>
+           <%= link_to 'Add a Workspace', new_listing_path, class: "btn btn-danger" %>
+      <% end %>
+    </div>
 </div>
