@@ -1,8 +1,31 @@
   <div class="jumbotron">
-  <h3>No office, no problem!</h3>
+  <h2>No office, no problem!</h2>
   <p>Find and book available workspaces around you.</p>
 </div>
 
+<h2> Quick browsing for angry people </h2>
+<table class="table table-hover table-bordered table-condensed">
+ <tr class = "strong">
+    <th>Space</th>
+    <th>Price (per day)</th> 
+    <th>City</th>
+    <th>Added By</th>
+  </tr>
+
+  <tr>
+    <% @listings.each do |listing| %>
+    <td class= "strong"><%= link_to listing.name, listing %></td>
+    <td><%= listing.price %></td>
+    <td><%= listing.city %> </td>
+    <td><%= listing.user.name %></td> 
+
+  </tr>
+  <% end %>
+</table>
+
+
+<br>
+<h2> Browse by image </h2>
 <div class="row">
 </br>
   <% @listings.each do |listing| %>
