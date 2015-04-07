@@ -2,13 +2,22 @@
 
 <div class="row">
     <div class="col-md-6">
-      <div class="thumbnail">
-      <%= image_tag @listing.image.url %>
-    </div>
-    </div>
+    <h1><%= @listing.name %></h1>
+       </br>
 
+      <div class="thumbnail">
+         <%= image_tag @listing.image.url %>
+         </br>
+
+          <%= link_to 'Back', listings_path, class: "btn btn-primary" %>
+          <% if (current_user == @listing.user) %>
+                    <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-warning" %> 
+          <% end %>
+
+    </div>
+    </div>
+<br/>
     <div class="col-md-6">
-      <h3><%= @listing.name %></h3>
       <p><strong>Price:</strong><%= @listing.price %></p>
       <p><%= @listing.officetype %></p>
       <p><strong>Aminities:</strong><%= @listing.aminities %></p>
@@ -17,9 +26,8 @@
       <p><strong>Rules:</strong><%= @listing.rules %></p>
       <p><strong>Contacts:</strong><%= @listing.contacts %></p>
     </div>
-          <%= link_to 'Edit', edit_listing_path(@listing) %> |
-          <%= link_to 'Back', listings_path %>
- 
+
+
 
 
 
