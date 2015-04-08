@@ -3,18 +3,27 @@
   <p>Find and book available workspaces around you.</p>
 </div>
 
+
+<div class="row">
+<div class="col-md-3">
+      <% if user_signed_in? %>
+           <%= link_to 'Add a Workspace', new_listing_path, class: "btn btn-danger center-block" %>
+      <% end %>
+    </div>
+</div>
+
 <h2> Quick browsing for angry people </h2>
 <table class="table table-hover table-bordered table-condensed">
  <tr class = "strong">
-    <th>Space</th>
-    <th>Price (per day)</th> 
-    <th>City</th>
-    <th>Added By</th>
+    <th class= "h4">Space</th>
+    <th class= "h4">Price (per day)</th> 
+    <th class= "h4">City</th>
+    <th class= "h4">Added By</th>
   </tr>
 
   <tr>
     <% @listings.each do |listing| %>
-    <td class= "strong"><%= link_to listing.name, listing %></td>
+    <td class= "h4"><%= link_to listing.name, listing %></td>
     <td><%= listing.price %></td>
     <td><%= listing.city %> </td>
     <td><%= listing.user.name %></td> 
@@ -29,26 +38,18 @@
 <div class="row">
 </br>
   <% @listings.each do |listing| %>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="thumbnail">
         <%= link_to image_tag(listing.image.url(:medium) ), listing %>
+        </div>
+
         <div class="caption">
-        <h3><span class="label label-primary"><%= listing.name %></span></h3>
+        <h3><span><%= link_to listing.name, listing %></span></h3>
         <p> Add by <strong><%= listing.user.name %></strong>  </p>
         <p> <strong> <%= listing.price %> </strong> SAR per workday</p>
         <p><%= listing.city %></p>
-      
       </div>
-     </div>
    </div>
 <% end %>
 </div>
 
-<div class="row">
-<div class="col-md-12">
-      <% if user_signed_in? %>
-           <%= link_to 'Add a Workspace', new_listing_path, class: "btn btn-danger center-block" %>
-      <% end %>
-    </div>
-</div>
-<hr>

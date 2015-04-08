@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def how
   end
+
+  def why
+  end
 end
